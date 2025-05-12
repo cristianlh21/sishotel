@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+:root {
+    --color-bg: #FAFDFE; /* Fondo claro (Azul claro) */
+    --color-bg-body:#1b222d;
+    --color-text: #333333; /* Texto claro (Azul fuerte) */
+    --color-input-bg: #ffffff; /* Fondo de input (Blanco) */
+    --color-border: #0084F6; /* Borde de inputs (Cian claro) */
+    --color-error: #ff3b3b; /* Color de error (Rojo) */
+    --color-primary: #0084F6; /* Color primario (Azul suave) */
+    --color-secondary: #FFB84D; /* Color secundario (Azul medio) */
+    --color-weak: #ff3b3b; /* Color de advertencia (Rojo) */
+    --color-medium: #f5a623; /* Color medio (Amarillo) */
+    --color-strong: #00e676; /* Color fuerte (Verde) */
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    --color-bg: #172029; /* Fondo oscuro (Azul oscuro) */
+    --color-bg-body:#1C2734;
+    --color-text: #FAFDFE; /* Texto oscuro (Blanco) */
+    --color-input-bg: #1e1e1e; /* Fondo input oscuro */
+    --color-border: #00B8FF; /* Borde de inputs (gris oscuro) */
+    --color-error: #ff6f6f; /* Color de error (Rojo claro) */
+    --color-primary: #00B8FF; /* Color primario (Cian claro) */
+    --color-secondary: #00D1B2; /* Color secundario (Azul brillante) */
+    --color-weak: #ff6f6f; /* Color de advertencia (Rojo claro) */
+    --color-medium: #ffd54f; /* Color medio (Amarillo suave) */
+    --color-strong: #00e676; /* Color fuerte (Verde) */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bg-body);
+    color: var(--color-text);
+}
+
+.container {
+    font-family: 'Merriweather', 'Roboto', sans-serif;
+    width: 800px;
+    height: 600px;
+    display: flex;
+    position: relative;
+    background-color: var(--color-bg);
+    border-radius: 0% 25% 15% 0%;
+    transition: 1.5s ease-in-out;
+    
+}
+
+.container-form {
+    width: 100%;
+    overflow: hidden;
+}
+
+.container-form form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease-in-out;
+}
+
+.container-form h2 {
+    color: var(--color-text);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.social-networks {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.social-networks ion-icon {
+    border: 1px solid var(--color-text);
+    font-size: 18px;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.container-form span {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.container-form a {
+    color: var(--color-secondary);
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.button {
+    width: 170px;
+    height: 45px;
+    border: none;
+    outline: none;
+    background-color: var(--color-primary);
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: brightness(0.8);
+}
+
+/* animaciones de los formularios */
+.sign-up {
+    transform: translateX(-100%);
+}
+
+.container.toggle {
+    border-radius: 25% 0% 0% 15%;
+    transition: 1.5s ease-in-out;
+}
+
+.container.toggle .sign-in {
+    transform: translate(100%);
+}
+
+.container.toggle .sign-up {
+    transform: translate(0);
+}
+
+
+
+.container.toggle .container-form h2 {
+    color: var(--color-secondary);
+}
+
+.container-welcome {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transform: translate(100%);
+    background-color: var(--color-secondary);
+    transition: transform 1s ease-in-out, border-radius 1s ease-in-out;
+    overflow: hidden;
+    border-radius: 40% 25% 15% 70%;
+}
+
+.container.toggle .container-welcome {
+    transform: translate(0);
+    border-radius: 25% 40% 70% 15%;
+    background-color: var(--color-secondary);
+}
+
+.container-welcome .welcome {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+    transition: transform 1s ease-in-out;
+    color: var(--color-text);
+}
+
+.welcome-sign-in {
+    transform: translate(100%);
+}
+
+.welcome-sign-up {
+    color: white;
+}
+
+.container-welcome h2 {
+    font-size: 40px;
+}
+
+.container-welcome p {
+    font-size: 14px;
+    text-align: center;
+}
+
+.container-welcome button {
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.container.toggle .welcome-sign-in {
+    transform: translate(0);
+}
+
+.container.toggle .welcome-sign-up {
+    transform: translate(-100%);
+}
+
+/* estilos de los inputs */
+.inputBox {
+    position: relative;
+    width: 300px;
+    margin-bottom: 25px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    background: var(--color-input-bg);
+    outline: none;
+    border-radius: 5px;
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1rem;
+    color: var(--color-border);
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-color: transparent;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+    color: #fff;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 2px 10px;
+    background-color: var(--color-primary);
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+    border: 2px solid var(--color-primary);
+}
+
+.container.toggle .inputBox input:valid ~ span,
+.container.toggle .inputBox input:focus ~ span {
+    background-color: var(--color-secondary);
+}
+
+.container.toggle .inputBox input:valid,
+.container.toggle .inputBox input:focus {
+    border: 2px solid var(--color-secondary);
+}
+
+.password-strength {
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+#password-strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease-in-out;
+}
+
+#password-strength-bar.weak {
+    background-color: var(--color-weak);
+}
+
+#password-strength-bar.medium {
+    background-color: var(--color-medium);
+}
+
+#password-strength-bar.strong {
+    background-color: var(--color-strong);
+}
+
+.divcon{
+    box-sizing: border-box;
+    display: flex;
+}
+
+/* botones */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    background-color: #000;
+    text-decoration: none;
+    
+}
+
+a {
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #03e9f4;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 0.5s;
+    overflow: hidden;
+    margin-right: 70px;
+
+}
+
+a:hover {
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}   
+
+a.first-child{
+    filter: hue-rotate(225deg);
+}
+
+a.last-child{
+    filter: hue-rotate(225deg);
+}
+
+a span {
+    position: absolute;
+    display: block;
+}
+
+a span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: .25s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    50%, 100% {
+        top: 100%;
+    }
+}
+
+a span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: .5s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+        height: 2px;
+    }
+    50%, 100% {
+        height: 2px;
+        right: 100%;
+    }
+}
+
+a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: .75s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+        
+    }
+    50%, 100% {
+        
+        bottom: 100%;
+    }
+}

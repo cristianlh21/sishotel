@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+:root {
+    --color-bg: #FAFDFE; /* Fondo claro (Azul claro) */
+    --color-bg-body:#1b222d;
+    --color-text: #333333; /* Texto claro (Azul fuerte) */
+    --color-input-bg: #ffffff; /* Fondo de input (Blanco) */
+    --color-border: #0084F6; /* Borde de inputs (Cian claro) */
+    --color-error: #ff3b3b; /* Color de error (Rojo) */
+    --color-primary: #0084F6; /* Color primario (Azul suave) */
+    --color-secondary: #FFB84D; /* Color secundario (Azul medio) */
+    --color-weak: #ff3b3b; /* Color de advertencia (Rojo) */
+    --color-medium: #f5a623; /* Color medio (Amarillo) */
+    --color-strong: #00e676; /* Color fuerte (Verde) */
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    --color-bg: #172029; /* Fondo oscuro (Azul oscuro) */
+    --color-bg-body:#1C2734;
+    --color-text: #FAFDFE; /* Texto oscuro (Blanco) */
+    --color-input-bg: #1e1e1e; /* Fondo input oscuro */
+    --color-border: #00B8FF; /* Borde de inputs (gris oscuro) */
+    --color-error: #ff6f6f; /* Color de error (Rojo claro) */
+    --color-primary: #00B8FF; /* Color primario (Cian claro) */
+    --color-secondary: #00D1B2; /* Color secundario (Azul brillante) */
+    --color-weak: #ff6f6f; /* Color de advertencia (Rojo claro) */
+    --color-medium: #ffd54f; /* Color medio (Amarillo suave) */
+    --color-strong: #00e676; /* Color fuerte (Verde) */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bg-body);
+    color: var(--color-text);
+}
+
+/* Contenido del contenedor de los formularios de ingreso */
+.container-form h2 {
+    color: var(--color-text);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.social-networks {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.social-networks ion-icon {
+    border: 1px solid var(--color-text);
+    font-size: 18px;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.container-form span {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.container-form a {
+    color: var(--color-secondary);
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+/* estilo del contenedor toggle cuando muestra el formulario registro */
+.container.toggle {
+    border-radius: 25% 0% 0% 15%;
+    transition: 1.5s ease-in-out;
+}
+
+.container.toggle .sign-in {
+    transform: translate(100%);
+}
+
+.container.toggle .sign-up {
+    transform: translate(0);
+}
+
+
+
+.container.toggle .container-form h2 {
+    color: var(--color-secondary);
+}
+
+/* animaciones de los formularios */
+.sign-up {
+    transform: translateX(-100%);
+}
+
+/* estilo del formulario de registro */
+.container-welcome {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transform: translate(100%);
+    background-color: var(--color-secondary);
+    transition: transform 1s ease-in-out, border-radius 1s ease-in-out;
+    overflow: hidden;
+    border-radius: 40% 25% 15% 70%;
+}
+
+.container.toggle .container-welcome {
+    transform: translate(0);
+    border-radius: 25% 40% 70% 15%;
+    background-color: var(--color-secondary);
+}
+
+.welcome-sign-in {
+    transform: translate(100%);
+}
+
+.welcome-sign-up {
+    color: white;
+}
+
+.container-welcome h2 {
+    font-size: 40px;
+}
+
+.container-welcome p {
+    font-size: 14px;
+    text-align: center;
+}
+
+.container-welcome button {
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--color-primary);
+}

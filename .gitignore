@@ -17,7 +17,7 @@ media/
 staticfiles/
 
 # If you use Django's collectstatic:
-static/
+#
 
 # Environment variables
 .env
