@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <header class="header">
+        <div class="logo">
+            <img src="" alt="">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <nav>
+                    <a href="{% url 'account:register' %}" hx-get="{% url 'account:register' %}" hx-target="#main" hx-push-url="true">Registro</a>
+                    <a href="">Login</a>
+                </nav>
+            </ul>
+        </nav>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, cupiditate eveniet officiis dicta accusamus dolorum molestias? Beatae, ducimus, deleniti voluptas, iure neque ratione deserunt omnis maiores quasi nihil possimus fuga.
+        </div>
+    </header>
+{% endblock content %}
